@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Button, Icon, Table, Thead, Tr, Th, Checkbox, Tbody, Td, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, Heading, Button, Icon, IconButton, Table, Thead, Tr, Th, Checkbox, Tbody, Td, Text, useBreakpointValue } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
@@ -64,16 +64,26 @@ export default function UserList() {
                   </Td>
                 )}
                 <Td>
-                  <Button
-                    as="a"
-                    size="sm"
-                    fontSize="sm"
-                    colorScheme="purple"
-                    leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                    iconSpacing={{ base: 0, lg: "2" }}
-                  >
-                    {isWideVersion && 'Editar'}
-                  </Button>
+                  {isWideVersion ? (
+                    <Button
+                      as="a"
+                      size="sm"
+                      fontSize="sm"
+                      colorScheme="purple"
+                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                    >
+                      Editar
+                    </Button>
+                  ) : (
+                    <IconButton
+                      aria-label="Edit"
+                      as="a"
+                      size="sm"
+                      icon={<Icon as={RiPencilLine} fontSize="16" />}
+                      variant="solid"
+                      colorScheme="purple"
+                    />
+                  )}
                 </Td>
               </Tr>
               <Tr>
@@ -92,16 +102,26 @@ export default function UserList() {
                   </Td>
                 )}
                 <Td>
-                  <Button
-                    as="a"
-                    size="sm"
-                    fontSize="sm"
-                    colorScheme="purple"
-                    leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                    iconSpacing={{ base: 0, lg: "2" }}
-                  >
-                    {isWideVersion && 'Editar'}
-                  </Button>
+                  {isWideVersion ? (
+                    <Button
+                      as="a"
+                      size="sm"
+                      fontSize="sm"
+                      colorScheme="purple"
+                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                    >
+                      Editar
+                    </Button>
+                  ) : (
+                    <IconButton
+                      aria-label="Edit"
+                      as="a"
+                      size="sm"
+                      icon={<Icon as={RiPencilLine} fontSize="16" />}
+                      variant="solid"
+                      colorScheme="purple"
+                    />
+                  )}
                 </Td>
               </Tr>
               <Tr>
@@ -120,16 +140,26 @@ export default function UserList() {
                   </Td>
                 )}
                 <Td>
-                  <Button
-                    as="a"
-                    size="sm"
-                    fontSize="sm"
-                    colorScheme="purple"
-                    leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                    iconSpacing={{ base: 0, lg: "2" }}
-                  >
-                    {isWideVersion && 'Editar'}
-                  </Button>
+                  {isWideVersion ? (
+                    <Button
+                      as="a"
+                      size="sm"
+                      fontSize="sm"
+                      colorScheme="purple"
+                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                    >
+                      Editar
+                    </Button>
+                  ) : (
+                    <IconButton
+                      aria-label="Edit"
+                      as="a"
+                      size="sm"
+                      icon={<Icon as={RiPencilLine} fontSize="16" />}
+                      variant="solid"
+                      colorScheme="purple"
+                    />
+                  )}
                 </Td>
               </Tr>
             </Tbody>
