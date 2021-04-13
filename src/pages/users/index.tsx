@@ -1,29 +1,13 @@
 import { Box, Flex, Heading, Button, Icon, IconButton, Table, Thead, Tr, Th, Checkbox, Tbody, Td, Text, useBreakpointValue, Spinner } from "@chakra-ui/react";
 import Link from 'next/link';
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
-import { useQuery } from "react-query";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
-import { api } from "../../services/api";
+import { useUsers } from "../../services/hooks/useUsers";
 
 export default function UserList() {
-  const { data: users, isLoading, isFetching, error } = useQuery('users', async () => {
-    const { data } = await api.get('users')
-
-    const users = data.users.map(({ createdAt, ...rest }) => ({
-      createdAt: new Date(createdAt).toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      }),
-      ...rest,
-    }))
-
-    return users;
-  }, {
-    staleTime: 1000 * 5, // 5 sec
-  })
+  const { data: users, isLoading, isFetching, error } = useUsers()
 
   console.log(users)
 
